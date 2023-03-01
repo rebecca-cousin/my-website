@@ -18,6 +18,8 @@
 
 .background_image{
     background-image: url('../img/bgi4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .navbar{
@@ -88,3 +90,16 @@ line-height: 25px;
 color: #3c1f5b;
  }
                         
+@media only screen and (max-width: 768px) {
+.navbar{
+    display: block;
+width: 100%;
+
+
+
+}
+.background_image{
+    background-image: url('../img/bgi4.jpg');
+    width: 100%;
+}     
+}
