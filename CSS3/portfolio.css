@@ -89,17 +89,114 @@ font-weight: 100;
 line-height: 25px;
 color: #3c1f5b;
  }
-                        
+   
+ .column {
+    float: left;
+    width: 33.33%;
+    padding: 30px;
+    padding-right: 60px;
+    margin-left: 60px;
+    border-radius: 1px;
+position: relative;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250%;
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+    
+  }
+  
+  img {
+    border: 1px solid #ddd; /* Gray border */
+    border-radius: 4px;  /* Rounded border */
+    padding: 5px; /* Some padding */
+    width: 350px; /* Set a small width */
+    
+  }
+  
+  /* Add a hover effect (blue shadow) */
+  img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  }
+  
+  .header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: #f1f1f1;
+  }
+  
+  /* The progress container (grey background) */
+  .progress-container {
+    width: 100%;
+    height: 8px;
+    background: #ccc;
+  }
+  
+  /* The progress bar (scroll indicator) */
+  .progress-bar {
+    height: 8px;
+    background: #04AA6D;
+    width: 0%;
+  }
+  
+ 
 @media only screen and (max-width: 768px) {
 .navbar{
     display: block;
 width: 100%;
-
-
+                   
 
 }
 .background_image{
     background-image: url('../img/bgi5.jpg');
     width: 100%;
-}     
+    background-size: cover;
+}   
+.content p{
+    margin:  20px auto;
+    font-weight: 100;
+    line-height: 25px;
+    color: #3c1f5b;
+     }
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 30px;
+    padding-right: 60px;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+    
+  }  
+img {
+    border: 1px solid #ddd; /* Gray border */
+    border-radius: 4px;  /* Rounded border */
+    padding: 5px; /* Some padding */
+    width: 350px; /* Set a small width */
+    
+  }
+  
+  /* Add a hover effect (blue shadow) */
+  img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  }
+  
 }

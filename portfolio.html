@@ -32,8 +32,39 @@
 
 </div>
     </div>
-    <img src="./img/cat1.JPG" width="460" height="345">
+    <div class="row">
+        <div class="column">
+            <img src="./img/cat1.JPG" width="460" height="345" class="center">
 
+        </div>
+        <div class="column">
+            <img src="./img/cat2.JPG" width="460" height="345" class="center">
+
+        </div>
+        <div class="column">
+            <img src="./img/cat3.JPG" width="460" height="345" class="center">
+
+        </div>
+      </div>
+   
+      <div class="header">
+        <h2>gallery</h2>
+        <div class="progress-container">
+          <div class="progress-bar" id="myBar"></div>
+        </div>
+      </div>
+      <script>
+        // When the user scrolls the page, execute myFunction 
+        window.onscroll = function() {myFunction()};
+        
+        function myFunction() {
+          var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+          var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          var scrolled = (winScroll / height) * 100;
+          document.getElementById("myBar").style.width = scrolled + "%";
+        }
+        </script>
+        
 </body>
 
 </html>
