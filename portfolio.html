@@ -25,46 +25,106 @@
                               
                             </ul>
 </div>
-<div class="content">
+
+  <div class="content">
 <h1> GALLERY</h1>
 <P> A Collection Of My Digital Art!
 </P>
+</div> 
 
-</div>
+<h1 class="color"> GALLERY </h1>
+
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <img src="img/art1.png" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+    <img src="img/art2.png" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+    <img src="img/art3.png" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+    <img src="img/art4.png" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+    <img src="img/art7.png" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <img src="img/art6.png" style="width:100%">
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="img/art1.png" style="width:100%" onclick="currentSlide(1)" alt="art1">
     </div>
-    <div class="row">
-        <div class="column">
-            <img src="./img/cat1.JPG" width="460" height="345" class="center">
+    <div class="column">
+      <img class="demo cursor" src="img/art2.png" style="width:100%" onclick="currentSlide(2)" alt="art2">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img/art3.png" style="width:100%" onclick="currentSlide(3)" alt="art3">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img/art4.png" style="width:100%" onclick="currentSlide(4)" alt="art4">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img/art7.png" style="width:100%" onclick="currentSlide(5)" alt="art7">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="img/art6.png" style="width:100%" onclick="currentSlide(6)" alt="art6">
+    </div>
+  </div>
+</div>
 
-        </div>
-        <div class="column">
-            <img src="./img/cat2.JPG" width="460" height="345" class="center">
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
 
-        </div>
-        <div class="column">
-            <img src="./img/cat3.JPG" width="460" height="345" class="center">
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
 
-        </div>
-      </div>
-   
-      <div class="header">
-        <h2>gallery</h2>
-        <div class="progress-container">
-          <div class="progress-bar" id="myBar"></div>
-        </div>
-      </div>
-      <script>
-        // When the user scrolls the page, execute myFunction 
-        window.onscroll = function() {myFunction()};
-        
-        function myFunction() {
-          var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-          var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-          var scrolled = (winScroll / height) * 100;
-          document.getElementById("myBar").style.width = scrolled + "%";
-        }
-        </script>
-        
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+    
 </body>
 
 </html>
